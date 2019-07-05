@@ -1,0 +1,43 @@
+{% extends 'base/layout.html' %} {% load static %} {% block userdefined %}
+<center>
+  <div class="container">
+    <form action="" class="">
+      <div class="form-group">
+        <label for="name">User Name : </label>
+        <input id="name" type="text" placeholder="user name" required />
+      </div>
+      <div class="form-group">
+        <label for="contact">Contact No : </label>
+        <input
+          id="contact"
+          type="text"
+          placeholder="Phn No"
+          pattern="[6-9]{1}[0-9]{9}"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="first">First Name : </label>
+        <input id="first" type="text" placeholder="first name" />
+      </div>
+      <div class="form-group">
+        <label for="last">Last Name : </label>
+        <input id="last" type="text" placeholder="last name" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email ID: </label>
+        <input id="email" type="email" placeholder="Email" />
+      </div>
+      <div class="form-group">
+        <p>Set your password</p>
+        <label for="pass">Password : </label>
+        <input id="pass" type="password" value="" required />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success">Confirm</button>
+      </div>
+    </form>
+  </div>
+</center>
+
+{% endblock %}

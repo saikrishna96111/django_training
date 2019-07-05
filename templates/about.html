@@ -1,0 +1,22 @@
+{% extends 'base/layout.html' %}
+{% load static %}
+
+{% block userdefined %}
+<img src="{% static 'img/one.jpg' %}" alt="Not Found">
+
+<h1>About</h1>
+<h3>Akshit</h3>
+<p>1SI17IS030</p>
+<p>SIT</p>
+
+    <ol>
+        
+            {% for i in "Chinnu" %}
+         
+             <li>{{i}}</li>
+           
+             {% endfor %}
+        
+    </ol>
+    
+{% endblock %}

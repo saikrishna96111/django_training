@@ -1,0 +1,18 @@
+{% extends 'base/layout.html' %} {% load static %} {% block userdefined %}
+
+<div class="container">
+  {% if registered %}
+  <h1>Thank you for registering</h1>
+  {% else %}
+  <p class="h2 text-uppercase mb-3 text-center"></p>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
+      {% include 'base/forms.html' %}
+    </div>
+    <div class="col"></div>
+  </div>
+  {% endif %}
+</div>
+
+{% endblock %}

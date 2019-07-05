@@ -1,0 +1,7 @@
+<div class="container">
+  <form action="" method="POST" class="mt-4">
+    {% csrf_token %} {{ form.as_p }}
+
+    <input type="submit" value="{{ value }}" class="btn btn-success" />
+  </form>
+</div>

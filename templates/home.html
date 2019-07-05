@@ -1,0 +1,79 @@
+{% extends 'base/layout.html' %} {%load static%} {% block userdefined %}
+
+<!-- <form action="" method="POST">
+    {% csrf_token %} {{formsssss.as_p}}
+    {% csrf_token %}  {{msg}}
+    <br><br><br>
+    
+    <input type="text" name="" id="" class="form-control" maxlength="20" minlength="2" required="true" autofocus="true" placeholder="Some Text">
+
+    <input type="email" name="" id="" class="form-control" maxlength="20" required="true" autofocus="true" placeholder="email">
+
+    <input type="number" name="" id="" class="form-control" maxlength="20" minlength="2" required="true" autofocus="true" placeholder="number">
+    
+    <input type="submit">
+</form> -->
+
+<div class="container">
+  <form action="" method="POST" class="mt-4">
+    {% csrf_token %} {{ form.as_p }}
+    <input type="submit" value="Search" class="btn btn-info" />
+  </form>
+</div>
+<!-- {% if result %}
+<ol>
+{% for r in result %}
+
+   <li>{{r.student_name}}&nbsp;<a href="delete-student/{{r.id}}">delete</a></li>
+
+{% endfor %}
+</ol>
+{% endif%} -->
+<br /><br /><br />
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="create-student">Create</a>
+    </div>
+  </div>
+</nav>
+
+{% if result %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Student Name</th>
+      <th scope="col">Department</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in result %}
+    <tr>
+      <th scope="row">{{ r.id }}</th>
+      <td>{{ r.student_name }}</td>
+      <td>{{ r.department }}</td>
+      <td>
+        <a class="btn btn-primary" href="edit/{{ r.id }}" role="button">Edit</a
+        >&nbsp;&nbsp;&nbsp;
+        <a class="btn btn-danger" href="delete/{{ r.id }}" role="button"
+          >Delete</a
+        >
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %} {% if messages %} {% for r in messages %}
+<div class="alert alert-primary" role="alert">
+  {{ r }}
+</div>
+
+<!-- <div class="alert {% if message.tags %} alert-{{message.tags}} {% endif %}" role="alert"> 
+
+       
+
+       </div>
+         -->
+{% endfor %} {% endif %} {% endblock %}
