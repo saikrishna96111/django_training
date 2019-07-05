@@ -25,7 +25,9 @@ SECRET_KEY = 'z!pf%ubd4)n50s!9*i-026ehm@#51ff7l(+74vr%^yvm^%)=3x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'sheltered-tundra-56630.herokuapp.com',
+]
 
 
 # Application definition
